@@ -3,19 +3,24 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://sailajapinisetty.github.io/SoundHunt",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "qrcode": "^1.5.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",
+    "@types/qrcode": "^1.5.6",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",

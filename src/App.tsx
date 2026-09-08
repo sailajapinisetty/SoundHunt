@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import QRCode from 'qrcode';
 import './App.css';
 
@@ -70,15 +70,14 @@ interface GameState {
 
 function Admin({ state, setState }: any) {
   const [password, setPassword] = useState('');
-  const [customQuestion, setCustomQuestion] = useState('');
   const [qrDataUrl, setQrDataUrl] = useState('');
 
   // Generate QR code on mount
   useEffect(() => {
     const qrLink = `${window.location.origin}${window.location.pathname}?mode=player`;
     QRCode.toDataURL(qrLink, { width: 250, margin: 1, color: { dark: '#000', light: '#fff' } })
-      .then(url => setQrDataUrl(url))
-      .catch(err => console.error('QR Code generation failed:', err));
+      .then((url: string) => setQrDataUrl(url))
+      .catch((err: any) => console.error('QR Code generation failed:', err));
   }, []);
 
   const handleAdminLogin = () => {
@@ -195,7 +194,7 @@ function Admin({ state, setState }: any) {
   return null;
 }
 
-function PlayerJoin({ state, setState }: any) {
+function PlayerJoin({ setState }: any) {
   const [name, setName] = useState('');
   const [selectedAvatar, setSelectedAvatar] = useState('🎸');
 
@@ -238,7 +237,7 @@ function PlayerJoin({ state, setState }: any) {
   );
 }
 
-function PlayerLobby({ state, player }: any) {
+function PlayerLobby({ player }: any) {
   return (
     <div style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', color: 'white' }}>
       <div style={{ background: 'rgba(255,255,255,0.1)', padding: '50px', borderRadius: '20px', maxWidth: '500px', width: '100%', textAlign: 'center' }}>
