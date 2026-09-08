@@ -1,21 +1,21 @@
-export interface Player {
+export type Player = {
   id: string;
   name: string;
   score: number;
   reactionTime: number | null;
   joinedAt: number;
   hasPlayed: boolean;
-}
+};
 
-export interface GameState {
+export type GameState = {
   status: 'lobby' | 'playing' | 'results';
   players: Player[];
   currentRound: number;
   totalRounds: number;
   musicStartTime: number | null;
-}
+};
 
-export interface GameContextType {
+export type GameContextType = {
   gameState: GameState;
   addPlayer: (name: string) => void;
   startGame: () => void;
@@ -23,4 +23,4 @@ export interface GameContextType {
   resetGame: () => void;
   getWinner: () => Player | null;
   getRanking: () => Player[];
-}
+};
