@@ -1,0 +1,248 @@
+.results-screen {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.results-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 50px 40px;
+  max-width: 600px;
+  width: 100%;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.results-title {
+  font-size: 36px;
+  color: #667eea;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.winner-section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.winner-badge {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+  animation: bounce 0.6s ease-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.medal-large {
+  font-size: 64px;
+  margin-bottom: 15px;
+  animation: rotate 0.6s ease-out;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(360deg);
+  }
+  to {
+    transform: rotateY(0);
+  }
+}
+
+.winner-name {
+  font-size: 28px;
+  color: #333;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.winner-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+  font-weight: 600;
+}
+
+.winner-score {
+  font-size: 20px;
+  color: #667eea;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.ranking-section {
+  margin-bottom: 35px;
+}
+
+.ranking-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.ranking-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.ranking-item:hover {
+  background: #f0f2f5;
+  transform: translateX(5px);
+}
+
+.ranking-item.first {
+  background: linear-gradient(135deg, #ffd700 0%, #fffacd 100%);
+  border-left-color: #ffd700;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+.ranking-item.second {
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+  border-left-color: #c0c0c0;
+  box-shadow: 0 4px 12px rgba(192, 192, 192, 0.2);
+}
+
+.ranking-item.third {
+  background: linear-gradient(135deg, #cd7f32 0%, #e8c5a5 100%);
+  border-left-color: #cd7f32;
+  box-shadow: 0 4px 12px rgba(205, 127, 50, 0.2);
+}
+
+.ranking-position {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.medal {
+  font-size: 24px;
+}
+
+.position {
+  font-size: 14px;
+  color: #666;
+  min-width: 24px;
+  text-align: center;
+}
+
+.ranking-details {
+  flex: 1;
+  text-align: left;
+}
+
+.ranking-name {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.ranking-score {
+  font-size: 14px;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.ranking-stats {
+  text-align: right;
+}
+
+.stat {
+  font-size: 12px;
+  color: #999;
+  display: block;
+}
+
+.btn-play-again {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-play-again:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+@media (max-width: 600px) {
+  .results-container {
+    padding: 30px 20px;
+  }
+
+  .results-title {
+    font-size: 28px;
+  }
+
+  .medal-large {
+    font-size: 48px;
+  }
+
+  .winner-name {
+    font-size: 24px;
+  }
+
+  .ranking-item {
+    flex-wrap: wrap;
+  }
+
+  .ranking-stats {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  .stat {
+    font-size: 11px;
+  }
+}
